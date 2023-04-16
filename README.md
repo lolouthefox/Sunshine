@@ -1,4 +1,8 @@
-<h1>Sunshine</h1>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="/images/sunshine_dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="/images/sunshine.png">
+  <img alt="Shows an illustrated sun in light mode and a moon with stars in dark mode." src="/images/sunshine.png">
+</picture>
 <h2>Description</h2>
 Ever tried playing on servers with shaders? Probably, and we can all agree that it can be annoying to always have constant dawn while playing in servers as it reduces visibility for shaders enjoyers. This Fabric mod will make you able to control time while playing client-side. Meaning that it will only change what the game displays to you and no other player’s. Additionally it doesn’t affect gameplay.
 
