@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "lolousstudio.sunshine.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+  ],
+  "client": [
+    "Sun"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
