@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "alwayssun",
+  "id": "sunshine",
   "version": "${version}",
   "name": "Sunshine",
   "description": "Ever tried playing on servers with shaders? Probably, and we can all agree that it can be anoying to always have constant dawn while playing in servers as it reduces visibility for shaders enjoyers. This Fabric mod will make you able to control time while playing client-side. Meaning that it will only change what the game displays to you and not other player’s. Additionally it doesn’t deterrior gameplay.",
@@ -10,27 +10,29 @@
     "email": "liam.cheneval@lolous.studio"
   },
   "license": "All-Rights-Reserved",
-  "icon": "assets/alwaysSun/icon.png",
+  "icon": "assets/sunshine/icon.png",
   "environment": "client",
   "entrypoints": {
     "client": [
-      "lolous.alwayssun.client.AlwaysSunClient"
+
     ],
     "main": [
-      "lolous.alwayssun.AlwaysSun"
+      "lolousstudio.sunshine.Sunshine"
     ],
     "modmenu": [
-      "lolous.alwayssun.ModMenuIntegration"
+      "lolousstudio.sunshine.ConfigMenu"
     ]
   },
   "mixins": [
-    "alwaysSun.mixins.json"
+    "sunshine.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric": "*",
     "minecraft": "${minecraft_version}",
-    "yet-another-config-lib": ">=2.1.1"
+    "cloth-config":"10.0.96",
+    "modmenu":">=6.1.0-rc.4",
+    "yet_another_config_lib": "^2.5.0+1.19.4"
   },
   "custom": {
     "modmenu": {

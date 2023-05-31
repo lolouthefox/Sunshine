@@ -1,0 +1,7 @@
+{
+  "sunshine.title": "Sunshine",
+  "sunshine.option.freezeTime": "Freeze time",
+  "sunshine.option.freezeTime.tooltip": "if Enabled, will freeze world time.",
+  "sunshine.option.timeTick": "Freezed time",
+  "sunshine.option.timeTick.tooltip": "If time is freezed, what time do you want it to be set to? (in ticks)"
+}

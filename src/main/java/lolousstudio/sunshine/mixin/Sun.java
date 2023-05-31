@@ -13,9 +13,11 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import static lolousstudio.sunshine.Sunshine.getConfig;
+
 @Mixin(ClientWorld.class)
 public class Sun {
-    ConfigMenu config = AutoConfig.getConfigHolder(ConfigMenu.class).getConfig();
+    // ConfigMenu config = AutoConfig.getConfigHolder(ConfigMenu.class).getConfig();
     @Shadow
     @Final
     private ClientWorld.Properties clientWorldProperties;
@@ -23,8 +25,8 @@ public class Sun {
     @Inject(at = @At("TAIL"), method = "setTimeOfDay")
     @Environment(EnvType.CLIENT)
     public void setTimeOfDay(long time, CallbackInfo ci) {
-        if (config.staticTime) {
-            this.clientWorldProperties.setTimeOfDay(config.timeTick);
+        if (getConfig().freezeTime) {
+            this.clientWorldProperties.setTimeOfDay(getConfig().timeTick);
         }
     }
 }

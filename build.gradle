@@ -14,6 +14,11 @@ repositories {
     // for more information about repositories.
     maven { url "https://maven.shedaniel.me/" }
     maven { url "https://maven.terraformersmc.com/releases/" }
+    maven { url = "https://api.modrinth.com/maven" }
+    maven {
+        name 'Xander Maven'
+        url 'https://maven.isxander.dev/releases'
+    }
 }
 
 dependencies {
@@ -24,6 +29,9 @@ dependencies {
 
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+    // yacl
+    modImplementation 'dev.isxander.yacl:yet-another-config-lib-fabric:2.5.0+1.19.4'
 
     // Cloth config for config menus etc...
     modApi "com.terraformersmc:modmenu:${project.modmenu_version}"

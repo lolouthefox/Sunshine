@@ -14,13 +14,10 @@
   "environment": "client",
   "entrypoints": {
     "client": [
-
-    ],
-    "main": [
       "lolousstudio.sunshine.Sunshine"
     ],
     "modmenu": [
-      "lolousstudio.sunshine.ConfigMenu"
+      "lolousstudio.sunshine.integrations.ModMenuIntegration"
     ]
   },
   "mixins": [
@@ -31,7 +28,8 @@
     "fabric": "*",
     "minecraft": "${minecraft_version}",
     "cloth-config":"10.0.96",
-    "modmenu":">=6.1.0-rc.4"
+    "modmenu":">=6.1.0-rc.4",
+    "yet_another_config_lib": "^2.5.0+1.19.4"
   },
   "custom": {
     "modmenu": {
