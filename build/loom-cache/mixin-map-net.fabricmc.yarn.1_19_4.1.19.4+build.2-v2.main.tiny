@@ -1,3 +1,0 @@
-v1	named	intermediary
-FIELD	lolousstudio/sunshine/mixin/Sun	Lnet/minecraft/client/world/ClientWorld$Properties;	clientWorldProperties	field_24430
-FIELD	lolousstudio/sunshine/mixin/Sun	Lnet/minecraft/client/MinecraftClient;	client	field_3729
