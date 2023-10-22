@@ -1,6 +1,6 @@
 package lolousstudio.sunshine;
 
-import lolousstudio.sunshine.config.SunshineConfig;
+import lolousstudio.sunshine.config.SunshineConfig3;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
@@ -36,7 +36,7 @@ public class Sunshine implements ClientModInitializer {
         });
     }
 
-    public static SunshineConfig getConfig() {
-        return SunshineConfig.INSTANCE;
+    public static SunshineConfig3 getConfig() {
+        return SunshineConfig3.INSTANCE;
     }
 }

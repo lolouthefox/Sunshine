@@ -1,21 +1,24 @@
-[23:58:32] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.19.4 with Fabric Loader 0.14.19
-[23:58:33] [ForkJoinPool-1-worker-1/WARN] (FabricLoader/Metadata) Mod sunshine uses the version ${version} which isn't compatible with Loader's extended semantic version format (Could not parse version number component '${version}'!), SemVer is recommended for reliably evaluating dependencies and prioritizing newer version
-[23:58:33] [main/WARN] (FabricLoader/Resolution) Mod resolution failed
-[23:58:33] [main/INFO] (FabricLoader/Resolution) Immediate reason: [HARD_DEP_NO_CANDIDATE sunshine ${version} {depends fabricloader @ [>=${loader_version}]}, ROOT_FORCELOAD_SINGLE sunshine ${version}]
-[23:58:33] [main/INFO] (FabricLoader/Resolution) Reason: [HARD_DEP sunshine ${version} {depends fabricloader @ [>=${loader_version}]}, HARD_DEP sunshine ${version} {depends minecraft @ [${minecraft_version}]}]
-[23:58:33] [main/INFO] (FabricLoader/Resolution) Fix: add [], remove [], replace [[sunshine ${version}] -> add:sunshine 1 ([(-∞,∞)])]
-[23:58:33] [main/ERROR] (FabricLoader) Incompatible mod set!
+[13:01:59] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.20.1 with Fabric Loader 0.14.21
+[13:02:00] [ForkJoinPool-1-worker-1/WARN] (FabricLoader/Metadata) Mod sunshine uses the version ${version} which isn't compatible with Loader's extended semantic version format (Could not parse version number component '${version}'!), SemVer is recommended for reliably evaluating dependencies and prioritizing newer version
+[13:02:00] [main/WARN] (FabricLoader/Resolution) Mod resolution failed
+[13:02:00] [main/INFO] (FabricLoader/Resolution) Immediate reason: [HARD_DEP_NO_CANDIDATE sunshine ${version} {depends fabricloader @ [>=${loader_version}]}, ROOT_FORCELOAD_SINGLE sunshine ${version}]
+[13:02:00] [main/INFO] (FabricLoader/Resolution) Reason: [HARD_DEP sunshine ${version} {depends fabricloader @ [>=${loader_version}]}, HARD_DEP sunshine ${version} {depends minecraft @ [${minecraft_version}]}, HARD_DEP yet_another_config_lib 2.5.0+1.19.4 {depends minecraft @ [~1.19.4]}]
+[13:02:00] [main/INFO] (FabricLoader/Resolution) Fix: add [], remove [], replace [[yet_another_config_lib 2.5.0+1.19.4] -> add:yet_another_config_lib 1 ([(-∞,∞)]), [sunshine ${version}] -> add:sunshine 1 ([(-∞,∞)])]
+[13:02:00] [main/ERROR] (FabricLoader) Incompatible mod set!
 net.fabricmc.loader.impl.FormattedException: Mod resolution encountered an incompatible mod set!
 A potential solution has been determined:
+	 - Replace mod 'YetAnotherConfigLib' (yet_another_config_lib) 2.5.0+1.19.4 with any version that is compatible with:
+		 - minecraft 1.20.1
 	 - Replace mod 'Sunshine' (sunshine) ${version} with any version that is compatible with:
-		 - fabricloader 0.14.19
-		 - minecraft 1.19.4
+		 - fabricloader 0.14.21
+		 - minecraft 1.20.1
 Unmet dependency listing:
-	 - Mod 'Sunshine' (sunshine) ${version} requires version ${loader_version} of mod 'Fabric Loader' (fabricloader), but only the wrong version is present: 0.14.19!
-	 - Mod 'Sunshine' (sunshine) ${version} requires version ${minecraft_version} of 'Minecraft' (minecraft), but only the wrong version is present: 1.19.4!
-	at net.fabricmc.loader.impl.FormattedException.ofLocalized(FormattedException.java:51) ~[fabric-loader-0.14.19.jar:?]
-	at net.fabricmc.loader.impl.FabricLoaderImpl.load(FabricLoaderImpl.java:192) ~[fabric-loader-0.14.19.jar:?]
-	at net.fabricmc.loader.impl.launch.knot.Knot.init(Knot.java:148) ~[fabric-loader-0.14.19.jar:?]
-	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:68) ~[fabric-loader-0.14.19.jar:?]
-	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23) ~[fabric-loader-0.14.19.jar:?]
+	 - Mod 'Sunshine' (sunshine) ${version} requires version ${loader_version} of mod 'Fabric Loader' (fabricloader), but only the wrong version is present: 0.14.21!
+	 - Mod 'Sunshine' (sunshine) ${version} requires version ${minecraft_version} of 'Minecraft' (minecraft), but only the wrong version is present: 1.20.1!
+	 - Mod 'YetAnotherConfigLib' (yet_another_config_lib) 2.5.0+1.19.4 requires any version between 1.19.4 (inclusive) and 1.20- (exclusive) of 'Minecraft' (minecraft), but only the wrong version is present: 1.20.1!
+	at net.fabricmc.loader.impl.FormattedException.ofLocalized(FormattedException.java:51) ~[fabric-loader-0.14.21.jar:?]
+	at net.fabricmc.loader.impl.FabricLoaderImpl.load(FabricLoaderImpl.java:192) ~[fabric-loader-0.14.21.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.init(Knot.java:148) ~[fabric-loader-0.14.21.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:68) ~[fabric-loader-0.14.21.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23) ~[fabric-loader-0.14.21.jar:?]
 	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[?:?]

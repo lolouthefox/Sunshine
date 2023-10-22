@@ -31,7 +31,7 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
     // yacl
-    modImplementation 'dev.isxander.yacl:yet-another-config-lib-fabric:2.5.0+1.19.4'
+    modImplementation 'dev.isxander.yacl:yet-another-config-lib-fabric:3.0.3+1.20'
 
     // Cloth config for config menus etc...
     modApi "com.terraformersmc:modmenu:${project.modmenu_version}"
