@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "lolous.studio.sunshine_rewrite.client.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "Sun"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
