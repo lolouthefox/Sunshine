@@ -3,33 +3,38 @@
   "id": "sunshine",
   "version": "${version}",
   "name": "Sunshine",
-  "description": "Ever tried playing on servers with shaders? Probably, and we can all agree that it can be anoying to always have constant dawn while playing in servers as it reduces visibility for shaders enjoyers. This Fabric mod will make you able to control time while playing client-side. Meaning that it will only change what the game displays to you and not other player’s. Additionally it doesn’t deterrior gameplay.",
+  "description": "Ever tried playing on servers with shaders? Probably, and we can all agree that it can be annoying to always have constant dawn while playing in servers as it reduces visibility for shaders enjoyers. This Fabric mod will make you able to control time while playing client-side. Meaning that it will only change what the game displays to you and not other player’s. Additionally it doesn’t deteriorate gameplay.",
   "authors": ["Lolou's Studio"],
   "contact": {
     "homepage": "https://lolous.studio/",
     "email": "liam.cheneval@lolous.studio"
   },
-  "license": "All-Rights-Reserved",
+  "license": "CC-BY-NC-ND-4.0",
   "icon": "assets/sunshine/icon.png",
   "environment": "client",
   "entrypoints": {
     "client": [
-      "lolousstudio.sunshine.Sunshine"
+      "lolous.studio.sunshine_rewrite.client.Sunshine_rewriteClient"
+    ],
+    "main": [
+      "lolous.studio.sunshine_rewrite.Sunshine_rewrite"
     ],
     "modmenu": [
-      "lolousstudio.sunshine.integrations.ModMenuIntegration"
+      "lolous.studio.sunshine_rewrite.client.integrations.ModMenu"
     ]
   },
   "mixins": [
-    "sunshine.mixins.json"
+    "sunshine_rewrite.mixins.json",
+    {
+      "config": "sunshine_rewrite.client.mixins.json",
+      "environment": "client"
+    }
   ],
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric": "*",
     "minecraft": "${minecraft_version}",
-    "cloth-config":">=11.0.99",
-    "modmenu":">=7.1.0",
-    "yet_another_config_lib": "*"
+    "yet_another_config_lib_v3": ">=3.5.0+1.21-fabric"
   },
   "custom": {
     "modmenu": {

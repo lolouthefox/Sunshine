@@ -3,6 +3,8 @@
   "sunshine.option.freezeTime": "Stopper le temps",
   "sunshine.option.freezeTime.tooltip": "Arrête le temps si actif.",
   "sunshine.option.timeTick": "Temps",
-  "sunshine.option.timeTick.tooltip": "Si le temps est arrêté, quel temps voulez-vous choisir? (en ticks)",
-  "sunshine.keybind.freezeToggle": "Arreter le temps (on/off)"
+  "sunshine.option.timeTick.tooltip": "Si le temps est arrêté, quel temps voulez-vous choisir ? (en ticks)",
+  "sunshine.keybind.freezeToggle": "Arrêter le temps (on/off)",
+  "sunshine.chat.frozen": "Temps arrêté !",
+  "sunshine.chat.unfrozen": "Le temps est relancé !"
 }
