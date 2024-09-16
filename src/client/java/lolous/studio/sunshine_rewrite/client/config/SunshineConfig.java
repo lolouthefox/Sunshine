@@ -35,9 +35,10 @@ public class SunshineConfig {
             JsonObject config = new JsonObject();
             config.addProperty("timeTick", timeTick);
             config.addProperty("freezeTime", freezeTime);
-            config.addProperty("timeTick", shortcut1TimeTick);
-            config.addProperty("timeTick", shortcut2TimeTick);
-            config.addProperty("timeTick", shortcut3TimeTick);
+
+            config.addProperty("shortcut1TimeTick", shortcut1TimeTick);
+            config.addProperty("shortcut2TimeTick", shortcut2TimeTick);
+            config.addProperty("shortcut3TimeTick", shortcut3TimeTick);
 
             Files.write(configFile, gson.toJson(config).getBytes());
         } catch (IOException e) {
@@ -59,6 +60,15 @@ public class SunshineConfig {
             }
             if (config.has("freezeTime")) {
                 freezeTime = config.getAsJsonPrimitive("freezeTime").getAsBoolean();
+            }
+            if (config.has("shortcut1TimeTick")) {
+                shortcut1TimeTick = config.getAsJsonPrimitive("shortcut1TimeTick").getAsInt();
+            }
+            if (config.has("shortcut2TimeTick")) {
+                shortcut2TimeTick = config.getAsJsonPrimitive("shortcut2TimeTick").getAsInt();
+            }
+            if (config.has("shortcut3TimeTick")) {
+                shortcut3TimeTick = config.getAsJsonPrimitive("shortcut3TimeTick").getAsInt();
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
