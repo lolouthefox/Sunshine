@@ -6,9 +6,12 @@
   "sunshine.options.main.freezeTime.tooltip": "If Enabled, will freeze world time.",
   "sunshine.options.main.timeTick": "Time when frozen",
   "sunshine.options.main.timeTick.tooltip": "If time is frozen, what time do you want it to be set to? (in ticks)",
+  "sunshine.options.main.customTimeCycle": "Custom time cycle",
+  "sunshine.options.main.customTimeCycle.tooltip": "This will make you able to choose a custom speed at which times circles with?",
+  "sunshine.options.main.customTimeCycleSpeed": "Custom time cycle speed",
+  "sunshine.options.main.customTimeCycleSpeed.tooltip": "Speed at which the time will run.",
 
   "sunshine.options.shortcuts.title": "Shortcuts Settings",
-
   "sunshine.options.shortcuts.shortcut1": "Shortcut #1: Time when frozen",
   "sunshine.options.shortcuts.shortcut1.tooltip": "Will freeze the time and set it to this option when pressing on the shortcut #1.",
   "sunshine.options.shortcuts.shortcut2": "Shortcut #2: Time when frozen",
@@ -17,6 +20,7 @@
   "sunshine.options.shortcuts.shortcut3.tooltip": "Will freeze the time and set it to this option when pressing on the shortcut #3.",
 
   "sunshine.keybindings.freezeToggle": "Freeze time toggle",
+  "sunshine.keybindings.customTimeCycle": "Custom time cycle toggle",
   "sunshine.keybindings.shortcut1": "Shortcut #1",
   "sunshine.keybindings.shortcut2": "Shortcut #2",
   "sunshine.keybindings.shortcut3": "Shortcut #3",

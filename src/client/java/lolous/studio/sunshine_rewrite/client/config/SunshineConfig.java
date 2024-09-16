@@ -25,6 +25,9 @@ public class SunshineConfig {
 
     public boolean freezeTime = false;
     public int timeTick = 6000;
+    public boolean customTimeCycle = false;
+    public int customTimeCycleSpeed = 20;
+
 
     public int shortcut1TimeTick = 0;
     public int shortcut2TimeTick = 6000;
@@ -35,6 +38,8 @@ public class SunshineConfig {
             JsonObject config = new JsonObject();
             config.addProperty("timeTick", timeTick);
             config.addProperty("freezeTime", freezeTime);
+            config.addProperty("customTimeCycle", customTimeCycle);
+            config.addProperty("customTimeCycleSpeed", customTimeCycleSpeed);
 
             config.addProperty("shortcut1TimeTick", shortcut1TimeTick);
             config.addProperty("shortcut2TimeTick", shortcut2TimeTick);
@@ -61,6 +66,13 @@ public class SunshineConfig {
             if (config.has("freezeTime")) {
                 freezeTime = config.getAsJsonPrimitive("freezeTime").getAsBoolean();
             }
+            if (config.has("customTimeCycle")) {
+                customTimeCycle = config.getAsJsonPrimitive("customTimeCycle").getAsBoolean();
+            }
+            if (config.has("customTimeCycleSpeed")) {
+                customTimeCycleSpeed = config.getAsJsonPrimitive("customTimeCycleSpeed").getAsInt();
+            }
+
             if (config.has("shortcut1TimeTick")) {
                 shortcut1TimeTick = config.getAsJsonPrimitive("shortcut1TimeTick").getAsInt();
             }
@@ -91,10 +103,27 @@ public class SunshineConfig {
                 .controller(opt -> new IntegerSliderControllerBuilderImpl(opt).range(0, 24_000).step(1000).formatValue(value -> Text.of(value + " ticks")))
                 .build();
 
+        Option<Boolean> customTimeCycleOption = Option.<Boolean>createBuilder()
+                .name(Text.translatable("sunshine.options.main.customTimeCycle"))
+                .description(OptionDescription.of(Text.translatable("sunshine.options.main.customTimeCycle.tooltip")))
+                .binding(false, () -> customTimeCycle, value -> customTimeCycle = value)
+                .controller(TickBoxControllerBuilderImpl::new)
+                .build();
+
+        Option<Integer> customTimeCycleSpeedOption = Option.<Integer>createBuilder()
+                .name(Text.translatable("sunshine.options.main.customTimeCycleSpeed"))
+                .description(OptionDescription.of(Text.translatable("sunshine.options.main.customTimeCycleSpeed.tooltip")))
+                .binding(20, () -> customTimeCycleSpeed, value -> customTimeCycleSpeed = value)
+                .controller(opt -> new IntegerSliderControllerBuilderImpl(opt).range(-1000, 1000).step(1).formatValue(value -> Text.of(value + " ticks per tick")))
+                .build();
+
         ConfigCategory sunshineCategory = ConfigCategory.createBuilder()
                 .name(Text.translatable("sunshine.options.main.title"))
                 .option(freezeTimeOption)
-                .option(timeTickOption).build();
+                .option(timeTickOption)
+                .option(customTimeCycleOption)
+                .option(customTimeCycleSpeedOption)
+                .build();
 
         // SHORTCUTS
         Option<Integer> shortcut1TimeTickOption = Option.<Integer>createBuilder()
