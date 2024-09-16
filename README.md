@@ -25,4 +25,4 @@ Do you have an idea (I don't have any idea on how to improve the mod) or found a
 - <a href="https://modrinth.com/mod/modmenu/">Mod Menu</a>
 - <a href="https://modrinth.com/mod/cloth-config/">Cloth config</a>
 - <a href="https://hypixel.net/">Hypixel (screenshots)</a>
-- <a href="https://modrinth.com/shader/bsl-shaders">BSL shaders (screenshots)</a>
+- <a href="https://modrinth.com/shader/bsl-shaders">BSL shaders (screenshots)</a> - A mod by LolouTheFox
