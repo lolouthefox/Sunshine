@@ -26,11 +26,18 @@ public class SunshineConfig {
     public boolean freezeTime = false;
     public int timeTick = 6000;
 
+    public int shortcut1TimeTick = 0;
+    public int shortcut2TimeTick = 6000;
+    public int shortcut3TimeTick = 12000;
+
     public void save() {
         try {
             JsonObject config = new JsonObject();
             config.addProperty("timeTick", timeTick);
             config.addProperty("freezeTime", freezeTime);
+            config.addProperty("timeTick", shortcut1TimeTick);
+            config.addProperty("timeTick", shortcut2TimeTick);
+            config.addProperty("timeTick", shortcut3TimeTick);
 
             Files.write(configFile, gson.toJson(config).getBytes());
         } catch (IOException e) {
@@ -59,28 +66,60 @@ public class SunshineConfig {
     }
 
     public Screen makeScreen(Screen parent) {
+        // MAIN OPTIONS
         Option<Boolean> freezeTimeOption = Option.<Boolean>createBuilder()
-                .name(Text.translatable("sunshine.option.freezeTime"))
-                .description(OptionDescription.of(Text.translatable("sunshine.option.freezeTime.tooltip")))
+                .name(Text.translatable("sunshine.options.main.freezeTime"))
+                .description(OptionDescription.of(Text.translatable("sunshine.options.main.freezeTime.tooltip")))
                 .binding(true, () -> freezeTime, value -> freezeTime = value)
                 .controller(TickBoxControllerBuilderImpl::new)
                 .build();
 
         Option<Integer> timeTickOption = Option.<Integer>createBuilder()
-                .name(Text.translatable("sunshine.option.timeTick"))
-                .description(OptionDescription.of(Text.translatable("sunshine.option.timeTick.tooltip")))
+                .name(Text.translatable("sunshine.options.main.timeTick"))
+                .description(OptionDescription.of(Text.translatable("sunshine.options.main.timeTick.tooltip")))
                 .binding(6000, () -> timeTick, value -> timeTick = value)
                 .controller(opt -> new IntegerSliderControllerBuilderImpl(opt).range(0, 24_000).step(1000).formatValue(value -> Text.of(value + " ticks")))
                 .build();
 
         ConfigCategory sunshineCategory = ConfigCategory.createBuilder()
-                .name(Text.translatable("sunshine.title"))
+                .name(Text.translatable("sunshine.options.main.title"))
                 .option(freezeTimeOption)
                 .option(timeTickOption).build();
 
+        // SHORTCUTS
+        Option<Integer> shortcut1TimeTickOption = Option.<Integer>createBuilder()
+                .name(Text.translatable("sunshine.options.shortcuts.shortcut1"))
+                .description(OptionDescription.of(Text.translatable("sunshine.options.shortcuts.shortcut1.tooltip")))
+                .binding(6000, () -> shortcut1TimeTick, value -> shortcut1TimeTick = value)
+                .controller(opt -> new IntegerSliderControllerBuilderImpl(opt).range(0, 24_000).step(1000).formatValue(value -> Text.of(value + " ticks")))
+                .build();
+
+        Option<Integer> shortcut2TimeTickOption = Option.<Integer>createBuilder()
+                .name(Text.translatable("sunshine.options.shortcuts.shortcut2"))
+                .description(OptionDescription.of(Text.translatable("sunshine.options.shortcuts.shortcut2.tooltip")))
+                .binding(6000, () -> shortcut2TimeTick, value -> shortcut2TimeTick = value)
+                .controller(opt -> new IntegerSliderControllerBuilderImpl(opt).range(0, 24_000).step(1000).formatValue(value -> Text.of(value + " ticks")))
+                .build();
+
+        Option<Integer> shortcut3TimeTickOption = Option.<Integer>createBuilder()
+                .name(Text.translatable("sunshine.options.shortcuts.shortcut3"))
+                .description(OptionDescription.of(Text.translatable("sunshine.options.shortcuts.shortcut3.tooltip")))
+                .binding(6000, () -> shortcut3TimeTick, value -> shortcut3TimeTick = value)
+                .controller(opt -> new IntegerSliderControllerBuilderImpl(opt).range(0, 24_000).step(1000).formatValue(value -> Text.of(value + " ticks")))
+                .build();
+
+        ConfigCategory shortcutsCategory = ConfigCategory.createBuilder()
+                .name(Text.translatable("sunshine.options.shortcuts.title"))
+                .option(shortcut1TimeTickOption)
+                .option(shortcut2TimeTickOption)
+                .option(shortcut3TimeTickOption)
+                .build();
+
+        // FINISH BUILD
         return YetAnotherConfigLib.createBuilder()
                 .title(Text.translatable("sunshine.title"))
                 .category(sunshineCategory)
+                .category(shortcutsCategory)
                 .save(this::save)
                 .build()
                 .generateScreen(parent);

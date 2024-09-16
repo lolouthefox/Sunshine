@@ -1,10 +1,26 @@
 {
   "sunshine.title": "Sunshine",
-  "sunshine.option.freezeTime": "Stopper le temps",
-  "sunshine.option.freezeTime.tooltip": "Arrête le temps si actif.",
-  "sunshine.option.timeTick": "Temps",
-  "sunshine.option.timeTick.tooltip": "Si le temps est arrêté, quel temps voulez-vous choisir ? (en ticks)",
-  "sunshine.keybind.freezeToggle": "Arrêter le temps (on/off)",
-  "sunshine.chat.frozen": "Temps arrêté !",
-  "sunshine.chat.unfrozen": "Le temps est relancé !"
+
+  "sunshine.options.main.title": "Général",
+  "sunshine.options.main.freezeTime": "Arrêter le temps",
+  "sunshine.options.main.freezeTime.tooltip": "Si activé, le temps s'arrêtera.",
+  "sunshine.options.main.timeTick": "Heure d'arrêt",
+  "sunshine.options.main.timeTick.tooltip": "Si le temps est arrêté, à quelle heure voulez vous qu'il s'arrête? (en ticks)",
+
+  "sunshine.options.shortcuts.title": "Raccourcis",
+
+  "sunshine.options.shortcuts.shortcut1": "Raccourci #1: Heure d'arrêt",
+  "sunshine.options.shortcuts.shortcut1.tooltip": "Va arrêter le temps et le mettre à cette option si le raccourci #1 est pressé.",
+  "sunshine.options.shortcuts.shortcut2": "Raccourci #2: Heure d'arrêt",
+  "sunshine.options.shortcuts.shortcut2.tooltip": "Va arrêter le temps et le mettre à cette option si le raccourci #2 est pressé.",
+  "sunshine.options.shortcuts.shortcut3": "Raccourci #3: Heure d'arrêt",
+  "sunshine.options.shortcuts.shortcut3.tooltip": "Va arrêter le temps et le mettre à cette option si le raccourci #3 est pressé.",
+
+  "sunshine.keybindings.freezeToggle": "Temps arrêt/marche",
+  "sunshine.keybindings.shortcut1": "Raccourci #1",
+  "sunshine.keybindings.shortcut2": "Raccourci #2",
+  "sunshine.keybindings.shortcut3": "Raccourci #3",
+
+  "sunshine.chat.frozen": "Le temps est arrêté !",
+  "sunshine.chat.unfrozen": "Le temps à repris son cours !"
 }

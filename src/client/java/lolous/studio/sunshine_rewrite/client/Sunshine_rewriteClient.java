@@ -11,6 +11,9 @@ import org.lwjgl.glfw.GLFW;
 
 public class Sunshine_rewriteClient implements ClientModInitializer {
     private static KeyBinding keyBinding;
+    private static KeyBinding shortcutKeyBinding1;
+    private static KeyBinding shortcutKeyBinding2;
+    private static KeyBinding shortcutKeyBinding3;
 
     @Override
     public void onInitializeClient() {
@@ -19,15 +22,36 @@ public class Sunshine_rewriteClient implements ClientModInitializer {
 
         // Setup keybinding
         keyBinding = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-                "sunshine.keybind.freezeToggle",
+                "sunshine.keybindings.freezeToggle",
                 InputUtil.Type.KEYSYM,
                 GLFW.GLFW_KEY_Y,
                 "sunshine.title"
         ));
 
-        // Listen for keybind
+        shortcutKeyBinding1 = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+                "sunshine.keybindings.shortcut1",
+                InputUtil.Type.KEYSYM,
+                GLFW.GLFW_KEY_N,
+                "sunshine.title"
+        ));
+
+        shortcutKeyBinding2 = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+                "sunshine.keybindings.shortcut2",
+                InputUtil.Type.KEYSYM,
+                GLFW.GLFW_KEY_COMMA,
+                "sunshine.title"
+        ));
+
+        shortcutKeyBinding3 = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+                "sunshine.keybindings.shortcut3",
+                InputUtil.Type.KEYSYM,
+                GLFW.GLFW_KEY_SEMICOLON,
+                "sunshine.title"
+        ));
+
+        // Listen for keybinding
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
-            while (keyBinding.wasPressed()) {
+            if (keyBinding.wasPressed()) {
                 getConfig().freezeTime = !getConfig().freezeTime;
                 getConfig().save();
                 if (client.player != null) {
@@ -37,6 +61,22 @@ public class Sunshine_rewriteClient implements ClientModInitializer {
                         client.player.sendMessage(Text.translatable("sunshine.chat.unfrozen"), false);
                     }
                 }
+            }
+
+            if (shortcutKeyBinding1.wasPressed()) {
+                getConfig().freezeTime = true;
+                getConfig().timeTick = getConfig().shortcut1TimeTick;
+                getConfig().save();
+            }
+            if (shortcutKeyBinding2.wasPressed()) {
+                getConfig().freezeTime = true;
+                getConfig().timeTick = getConfig().shortcut2TimeTick;
+                getConfig().save();
+            }
+            if (shortcutKeyBinding3.wasPressed()) {
+                getConfig().freezeTime = true;
+                getConfig().timeTick = getConfig().shortcut3TimeTick;
+                getConfig().save();
             }
         });
     }
