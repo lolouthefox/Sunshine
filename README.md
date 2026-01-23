@@ -1,4 +1,4 @@
-<a href="https://minestore.lolous.studio/sunshine">![Project infos.](https://github.com/lolouthefox/Sunshine/blob/master/images/sunshine_fill.png?raw=true)</a>
+<a href="#">![Project infos.](https://github.com/lolouthefox/Sunshine/blob/master/images/sunshine_fill.png?raw=true)</a>
 
 <div style="text-align: center;">
 
@@ -6,7 +6,7 @@
 
 </div>
 
-<h3>🎉 It's official, 3.0 is comming late 2025!</h3>
+<h3>Project on pause because of school.</h3>
 
 <h2>Description</h2>
 Ever tried playing on servers with shaders? Probably, and we can all agree that it can be annoying to always have constant dawn while playing in servers as it reduces visibility for shaders enjoyers. This Fabric mod will make you able to control time while playing client-side. Meaning that it will only change what the game displays to you and no other player’s. Additionally, it doesn’t affect gameplay.
